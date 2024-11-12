@@ -56,5 +56,18 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="Schema" />
+    <Folder Include="Schema\bronze" />
+    <Folder Include="Schema\bronze\Tables" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Schema\bronze\bronze.sql" />
+    <Build Include="Schema\bronze\Tables\title_akas.sql" />
+    <Build Include="Schema\bronze\Tables\title_basics.sql" />
+    <Build Include="Schema\bronze\Tables\title_crew.sql" />
+    <Build Include="Schema\bronze\Tables\title_episode.sql" />
+    <Build Include="Schema\bronze\Tables\title_principals.sql" />
+    <Build Include="Schema\bronze\Tables\title_ratings.sql" />
+    <Build Include="Schema\bronze\Tables\name_basics.sql" />
   </ItemGroup>
 </Project>
