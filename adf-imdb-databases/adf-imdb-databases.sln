@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "sqldb-dw-imdb-01", "sqldb-dw-imdb-01\sqldb-dw-imdb-01.sqlproj", "{FF4B4AA0-9E20-40DB-99D9-8D8BD557BB01}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF4B4AA0-9E20-40DB-99D9-8D8BD557BB01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF4B4AA0-9E20-40DB-99D9-8D8BD557BB01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF4B4AA0-9E20-40DB-99D9-8D8BD557BB01}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{FF4B4AA0-9E20-40DB-99D9-8D8BD557BB01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF4B4AA0-9E20-40DB-99D9-8D8BD557BB01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF4B4AA0-9E20-40DB-99D9-8D8BD557BB01}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {30DAA19A-D329-4579-ABFF-32C1CA40AB4F}
+	EndGlobalSection
+EndGlobal
