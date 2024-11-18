@@ -62,7 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="Schema\bronze\bronze.sql" />
-    <Build Include="Schema\bronze\Tables\title_akas.sql" />
     <Build Include="Schema\bronze\Tables\title_basics.sql" />
     <Build Include="Schema\bronze\Tables\title_crew.sql" />
     <Build Include="Schema\bronze\Tables\title_episode.sql" />
