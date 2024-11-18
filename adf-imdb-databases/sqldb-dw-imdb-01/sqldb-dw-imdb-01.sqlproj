@@ -62,6 +62,7 @@
     <Folder Include="Schema\silver" />
     <Folder Include="Schema\silver\Tables" />
     <Folder Include="Schema\bronze\Stored Procedures" />
+    <Folder Include="Schema\silver\Stored Procedures" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Schema\bronze\bronze.sql" />
@@ -79,6 +80,9 @@
     <Build Include="Schema\silver\Tables\Writers.sql" />
     <Build Include="Schema\silver\Tables\Ratings.sql" />
     <Build Include="Schema\silver\Tables\TVSeries.sql" />
+    <Build Include="Schema\silver\Stored Procedures\ADF_Transform_Load_Movies.sql" />
+    <Build Include="Schema\silver\Stored Procedures\ADF_Transform_Load_TVSeries.sql" />
+    <Build Include="Schema\silver\Stored Procedures\ADF_Truncate_Tables.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="sqldb-dw-imdb-01.publish.xml" />
