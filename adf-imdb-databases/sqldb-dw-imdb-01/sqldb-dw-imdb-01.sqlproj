@@ -59,6 +59,9 @@
     <Folder Include="Schema" />
     <Folder Include="Schema\bronze" />
     <Folder Include="Schema\bronze\Tables" />
+    <Folder Include="Schema\silver" />
+    <Folder Include="Schema\silver\Tables" />
+    <Folder Include="Schema\bronze\Stored Procedures" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Schema\bronze\bronze.sql" />
@@ -68,6 +71,7 @@
     <Build Include="Schema\bronze\Tables\title_principals.sql" />
     <Build Include="Schema\bronze\Tables\title_ratings.sql" />
     <Build Include="Schema\bronze\Tables\name_basics.sql" />
+    <Build Include="Schema\bronze\Stored Procedures\ADF_Truncate_Tables.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="sqldb-dw-imdb-01.publish.xml" />
