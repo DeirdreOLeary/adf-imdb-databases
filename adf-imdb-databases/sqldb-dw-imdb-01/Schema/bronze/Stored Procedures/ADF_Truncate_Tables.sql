@@ -4,7 +4,7 @@ Purpose:	This stored proc is called by the Azure Data Factory pipeline to
 
 Pipeline:	pl_data_bronze_extract_files (adf-imdb-to-sqldb-01)
 
-Activity:	Truncate all bronze tables
+Activity:	Truncate bronze tables
 
 ***********************************************************************************************/
 CREATE PROCEDURE [bronze].[ADF_Truncate_Tables]
