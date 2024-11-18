@@ -3,6 +3,6 @@
 	[ordering]		INT				NOT NULL,
 	[nconst]		VARCHAR(255)	NOT NULL,
 	[category]		VARCHAR(255)	NOT NULL,
-	[job]			VARCHAR(255)	NOT NULL,
-	[characters]	VARCHAR(255)	NOT NULL
+	[job]			VARCHAR(300)	NOT NULL,
+	[characters]	VARCHAR(500)	NOT NULL
 );
