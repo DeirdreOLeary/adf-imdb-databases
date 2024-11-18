@@ -72,6 +72,13 @@
     <Build Include="Schema\bronze\Tables\title_ratings.sql" />
     <Build Include="Schema\bronze\Tables\name_basics.sql" />
     <Build Include="Schema\bronze\Stored Procedures\ADF_Truncate_Tables.sql" />
+    <Build Include="Schema\silver\silver.sql" />
+    <Build Include="Schema\silver\Tables\Movies.sql" />
+    <Build Include="Schema\silver\Tables\Actors.sql" />
+    <Build Include="Schema\silver\Tables\Directors.sql" />
+    <Build Include="Schema\silver\Tables\Writers.sql" />
+    <Build Include="Schema\silver\Tables\Ratings.sql" />
+    <Build Include="Schema\silver\Tables\TVSeries.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="sqldb-dw-imdb-01.publish.xml" />
