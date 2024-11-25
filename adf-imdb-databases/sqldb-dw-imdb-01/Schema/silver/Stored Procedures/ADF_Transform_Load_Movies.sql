@@ -16,19 +16,19 @@ AS
         /* Get the details from the bronze titles_basics table for all non-adult movies with a primary title.
            Transform & load the data into the silver Movies table. */
         ;WITH [MovieTitles] AS (
-            SELECT [tconst] AS [TitleKey],
-                [primaryTitle] AS [Title],
+            SELECT LEFT([tconst], 10) AS [TitleKey],
+                LEFT([primaryTitle], 500) AS [Title],
                 CASE [startYear]
                     WHEN '\N' THEN NULL
-                    ELSE [startYear]
+                    ELSE CAST([startYear] AS CHAR(4))
                 END AS [ReleaseYear],
                 CASE [runtimeMinutes]
                     WHEN '\N' THEN NULL
-                    ELSE [runtimeMinutes]
+                    ELSE CAST([runtimeMinutes] AS INT)
                 END AS [RuntimeInMinutes],
                 CASE [genres]
                     WHEN '\N' THEN NULL
-                    ELSE [genres]
+                    ELSE LEFT([genres], 255)
                 END AS [Genres]
             FROM [bronze].[title_basics]
             WHERE [titleType] = 'movie'
