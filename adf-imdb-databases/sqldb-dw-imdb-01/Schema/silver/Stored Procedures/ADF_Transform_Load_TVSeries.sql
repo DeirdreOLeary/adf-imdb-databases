@@ -16,7 +16,7 @@ AS
         /* Get the details from the bronze titles_basics table for all non-adult TV series with a primary title.
            Transform & load the data into the silver TVSeries table. */
 		;WITH [EpisodesNulled] AS (
-			SELECT LEFT([parentTconst], 10) AS [parentTconst]
+			SELECT [parentTconst]
 				,CASE [seasonNumber]
 					WHEN '\N' THEN NULL
 					ELSE CAST([seasonNumber] AS SMALLINT)
@@ -53,7 +53,7 @@ AS
                 END AS [Genres]
 			    FROM [bronze].[title_basics] t
 			    INNER JOIN [SeasonsAndEpisodes] s
-			    ON LEFT(t.[tconst], 10) = s.[parentTconst]
+			    ON t.[tconst] = s.[parentTconst]
 			    WHERE t.[titleType] = 'tvSeries'
 				    AND t.[isAdult] = '0'
         )
