@@ -6,3 +6,7 @@
 	[job]			VARCHAR(300)	NOT NULL,
 	[characters]	VARCHAR(500)	NOT NULL
 );
+GO
+
+CREATE NONCLUSTERED INDEX [bronze_title_principals_category] ON [bronze].[title_principals] ([category]);
+	/* Create an index for the silver Transform & Load stored procedure */
