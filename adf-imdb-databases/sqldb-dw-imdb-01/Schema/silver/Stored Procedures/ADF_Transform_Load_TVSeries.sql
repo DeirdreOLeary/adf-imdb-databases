@@ -54,8 +54,8 @@ AS
 			    FROM [bronze].[title_basics] t
 			    INNER JOIN [SeasonsAndEpisodes] s
 			    ON LEFT(t.[tconst], 10) = s.[parentTconst]
-			    WHERE [titleType] = 'tvSeries'
-				    AND isAdult = 0
+			    WHERE t.[titleType] = 'tvSeries'
+				    AND t.[isAdult] = '0'
         )
         INSERT INTO [silver].[TVSeries] (
             [TitleKey],
