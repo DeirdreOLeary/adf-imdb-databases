@@ -84,6 +84,7 @@
     <Build Include="Schema\silver\Stored Procedures\ADF_Transform_Load_TVSeries.sql" />
     <Build Include="Schema\silver\Stored Procedures\ADF_Truncate_Tables.sql" />
     <Build Include="Schema\silver\Stored Procedures\ADF_Transform_Load_Actors.sql" />
+    <Build Include="Schema\silver\Stored Procedures\ADF_Transform_Load_Directors.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="sqldb-dw-imdb-01.publish.xml" />
