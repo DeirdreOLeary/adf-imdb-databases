@@ -19,6 +19,10 @@ AS
             SELECT LEFT(nb.[nconst], 10) AS [NameKey],
                 LEFT(tp.[tconst], 10) AS [TitleKey],
                 LEFT(nb.[primaryName], 255) AS [Name],
+                CASE tp.[characters]
+                    WHEN '\N' THEN ''
+                    ELSE LEFT(tp.[characters], 255)
+                END AS [Character],
                 CASE nb.[birthYear]
                     WHEN '\N' THEN NULL
                     ELSE LEFT(nb.[birthYear], 4)
@@ -26,8 +30,7 @@ AS
                 CASE nb.[deathYear]
                     WHEN '\N' THEN NULL
                     ELSE LEFT(nb.[deathYear], 4)
-                END AS [DeathYear],
-                LEFT(tp.[characters], 255) AS [Character]
+                END AS [DeathYear]
             FROM [bronze].[name_basics] nb
             INNER JOIN [bronze].[title_principals] tp
             ON nb.[nconst] = tp.[nconst]
