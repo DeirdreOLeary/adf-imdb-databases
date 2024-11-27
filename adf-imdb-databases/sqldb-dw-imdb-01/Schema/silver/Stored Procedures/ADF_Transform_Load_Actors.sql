@@ -40,16 +40,17 @@ AS
             [NameKey],
 	        [TitleKey],
 	        [Name],
+	        [Character],
 	        [BirthYear],
-	        [DeathYear],
-	        [Character]
+	        [DeathYear]
         )
-        SELECT [NameKey],
+        /* Remove duplicate entries */
+        SELECT DISTINCT [NameKey],
 	        [TitleKey],
 	        [Name],
+	        [Character],
 	        [BirthYear],
-	        [DeathYear],
-	        [Character]
+	        [DeathYear]
         FROM [ActorNames];
 
     END TRY
