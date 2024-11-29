@@ -13,8 +13,8 @@ AS
 
     BEGIN TRY
         
-        /* Get the details from the bronze name_basics & title_principals tables for all actors & associated characters.
-           Transform & load the data into the silver Actors table. */
+        /* Get the details from the bronze name_basics & title_principals tables for all actors 
+           & associated characters. Transform & load the data into the silver Actors table. */
 		;WITH [ActorNames] AS (
             SELECT LEFT(nb.[nconst], 10) AS [NameKey],
                 LEFT(tp.[tconst], 10) AS [TitleKey],

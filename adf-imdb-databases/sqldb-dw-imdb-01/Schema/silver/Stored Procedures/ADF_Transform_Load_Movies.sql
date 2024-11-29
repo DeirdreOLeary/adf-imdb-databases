@@ -13,8 +13,8 @@ AS
 
     BEGIN TRY
         
-        /* Get the details from the bronze titles_basics table for all non-adult movies with a primary title.
-           Transform & load the data into the silver Movies table. */
+        /* Get the details from the bronze titles_basics table for all non-adult movies with 
+           a primary title. Transform & load the data into the silver Movies table. */
         ;WITH [MovieTitles] AS (
             SELECT LEFT([tconst], 10) AS [TitleKey],
                 LEFT([primaryTitle], 500) AS [Title],
