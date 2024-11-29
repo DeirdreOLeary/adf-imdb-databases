@@ -6,3 +6,7 @@
 	[job]			VARCHAR(300)	NOT NULL,
 	[characters]	VARCHAR(500)	NOT NULL
 );
+GO
+
+CREATE NONCLUSTERED INDEX [bronze_title_principals_category_nconst_INC] ON [bronze].[title_principals] ([category], [nconst])
+INCLUDE ([tconst], [characters]);
