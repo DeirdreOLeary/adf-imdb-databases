@@ -13,8 +13,8 @@ AS
 
     BEGIN TRY
         
-        /* Get the details from the bronze titles_basics table for all non-adult TV series with a primary title.
-           Transform & load the data into the silver TVSeries table. */
+        /* Get the details from the bronze titles_basics table for all non-adult TV series with 
+           a primary title. Transform & load the data into the silver TVSeries table. */
 		;WITH [EpisodesNulled] AS (
 			SELECT [parentTconst]
 				,CASE [seasonNumber]
@@ -56,6 +56,7 @@ AS
 			    ON t.[tconst] = s.[parentTconst]
 			    WHERE t.[titleType] = 'tvSeries'
 				    AND t.[isAdult] = '0'
+                    AND [primaryTitle] <> '\N'
         )
         INSERT INTO [silver].[TVSeries] (
             [TitleKey],
