@@ -8,5 +8,5 @@
 );
 GO
 
-CREATE NONCLUSTERED INDEX [bronze_title_principals_nconst_category] ON [bronze].[title_principals] ([nconst], [category]);
-	/* Create a covering index for the silver Transform & Load stored procedure */
+CREATE NONCLUSTERED INDEX [bronze_title_principals_category_nconst_INC] ON [bronze].[title_principals] ([category], [nconst])
+INCLUDE ([tconst], [characters]);
