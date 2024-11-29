@@ -4,7 +4,7 @@ Purpose:	This stored proc is called by the Azure Data Factory pipeline to
 
 Pipeline:	pl_trans_silver_transform_load_data (adf-imdb-to-sqldb-01)
 
-Activity:	Transform & Load Writers data
+Activity:	Transform and Load Writers data
 
 ***********************************************************************************************/
 CREATE PROCEDURE [silver].[ADF_Transform_Load_Writers]
