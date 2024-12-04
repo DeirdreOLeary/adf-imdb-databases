@@ -96,6 +96,9 @@
     <Build Include="Schema\gold\Tables\dimDirector.sql" />
     <Build Include="Schema\gold\Tables\dimWriter.sql" />
     <Build Include="Schema\gold\Tables\factRating.sql" />
+    <Build Include="Schema\gold\Tables\bridgeActor.sql" />
+    <Build Include="Schema\gold\Tables\bridgeDirector.sql" />
+    <Build Include="Schema\gold\Tables\bridgeWriter.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="sqldb-dw-imdb-01.publish.xml" />
