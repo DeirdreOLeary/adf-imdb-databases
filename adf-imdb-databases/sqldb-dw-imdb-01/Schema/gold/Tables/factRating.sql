@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [gold].[factRating] (
-	[RatingId]		INT				NOT NULL	IDENTITY(1,1),
-	[MovieId]		INT				NOT NULL,
+	[RatingId]		INT				NOT NULL	IDENTITY(1,1),	/* Surrogate key */
+	[MovieId]		INT				NOT NULL,					/* Natural key */
 	[TVSeriesId]	INT				NOT NULL,
 	[IsMovie]		BIT				NOT NULL,
 	[IsTVSeries]	BIT				NOT NULL,
