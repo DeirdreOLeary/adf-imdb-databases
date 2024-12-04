@@ -95,6 +95,7 @@
     <Build Include="Schema\gold\Tables\dimActor.sql" />
     <Build Include="Schema\gold\Tables\dimDirector.sql" />
     <Build Include="Schema\gold\Tables\dimWriter.sql" />
+    <Build Include="Schema\gold\Tables\factRating.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="sqldb-dw-imdb-01.publish.xml" />
