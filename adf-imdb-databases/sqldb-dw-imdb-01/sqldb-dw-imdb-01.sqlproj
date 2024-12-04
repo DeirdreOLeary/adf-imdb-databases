@@ -63,6 +63,8 @@
     <Folder Include="Schema\silver\Tables" />
     <Folder Include="Schema\bronze\Stored Procedures" />
     <Folder Include="Schema\silver\Stored Procedures" />
+    <Folder Include="Schema\gold" />
+    <Folder Include="Schema\gold\Tables" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Schema\bronze\bronze.sql" />
@@ -87,6 +89,12 @@
     <Build Include="Schema\silver\Stored Procedures\ADF_Transform_Load_Directors.sql" />
     <Build Include="Schema\silver\Stored Procedures\ADF_Transform_Load_Writers.sql" />
     <Build Include="Schema\silver\Stored Procedures\ADF_Transform_Load_Ratings.sql" />
+    <Build Include="Schema\gold\Tables\dimMovie.sql" />
+    <Build Include="Schema\gold\gold.sql" />
+    <Build Include="Schema\gold\Tables\dimTVSeries.sql" />
+    <Build Include="Schema\gold\Tables\dimActor.sql" />
+    <Build Include="Schema\gold\Tables\dimDirector.sql" />
+    <Build Include="Schema\gold\Tables\dimWriter.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="sqldb-dw-imdb-01.publish.xml" />
