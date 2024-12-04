@@ -1,5 +1,6 @@
 ﻿CREATE TABLE [gold].[dimMovie] (
-	[MovieId]			INT				NOT NULL,
+	[MovieId]			INT				NOT NULL	IDENTITY(1,1),
+		/* Movie Ids start at 1 with a positive increment to prevent overlap with TVSeries Ids */
 	[TitleKey]			VARCHAR(10)		NOT NULL,
 	[Title]				VARCHAR(500)	NOT NULL,
 	[ReleaseYear]		CHAR(4)			NULL,

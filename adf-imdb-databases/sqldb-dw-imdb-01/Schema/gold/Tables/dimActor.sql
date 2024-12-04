@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [gold].[dimActor] (
-	[ActorId]		INT				NOT NULL,
+	[ActorId]		INT				NOT NULL	IDENTITY(1,1),
 	[NameKey]		VARCHAR(10)		NOT NULL,
 	[TitleKey]		VARCHAR(10)		NOT NULL,
 	[Name]			VARCHAR(255)	NOT NULL,
