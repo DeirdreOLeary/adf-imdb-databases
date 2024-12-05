@@ -104,6 +104,7 @@
     <Build Include="Schema\gold\Stored Procedures\ADF_Load_dimDirector.sql" />
     <Build Include="Schema\gold\Stored Procedures\ADF_Load_dimWriter.sql" />
     <Build Include="Schema\gold\Stored Procedures\ADF_Load_dimMovie.sql" />
+    <Build Include="Schema\gold\Stored Procedures\ADF_Load_dimTVSeries.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="sqldb-dw-imdb-01.publish.xml" />
