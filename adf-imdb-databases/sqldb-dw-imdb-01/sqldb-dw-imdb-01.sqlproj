@@ -106,6 +106,7 @@
     <Build Include="Schema\gold\Stored Procedures\ADF_Load_dimMovie.sql" />
     <Build Include="Schema\gold\Stored Procedures\ADF_Load_dimTVSeries.sql" />
     <Build Include="Schema\gold\Stored Procedures\ADF_Load_factRating.sql" />
+    <Build Include="Schema\gold\Stored Procedures\ADF_Load_bridgeActor.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="sqldb-dw-imdb-01.publish.xml" />
