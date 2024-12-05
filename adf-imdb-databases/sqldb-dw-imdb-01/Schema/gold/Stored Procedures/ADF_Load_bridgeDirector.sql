@@ -1,22 +1,22 @@
 ﻿/***********************************************************************************************
 Purpose:	This stored proc is called by the Azure Data Factory pipeline to 
-            load data from the gold dim and fact tables to the gold bridgeActor table.
-            The bridge table is required because the relationship between actor and
+            load data from the gold dim and fact tables to the gold bridgeDirector table.
+            The bridge table is required because the relationship between director and
             movie or tv series and the associated rating is many-to-many.
 
 Pipeline:	pl_data_gold_load_data (adf-imdb-to-sqldb-01)
 
-Activity:	Load bridgeActor data
+Activity:	Load bridgeDirector data
 
 ***********************************************************************************************/
-CREATE PROCEDURE [gold].[ADF_Load_bridgeActor]
+CREATE PROCEDURE [gold].[ADF_Load_bridgeDirector]
     @ETLTimestamp DATETIME2(2)
 AS
     SET NOCOUNT ON;
 
     BEGIN TRY
 
-            /* Insert the new ActorId and RatingId combinations into the bridge table for Actors.
+            /* Insert the new DirectorId and RatingId combinations into the bridge table for Directors.
                We do not change existing entries for the bridge table. */
             WITH MovieAndTV AS (
                 SELECT [MovieId],
@@ -38,25 +38,25 @@ AS
                 ON gfr.[MovieId] = mt.[MovieId]
                     AND gfr.[TVSeriesId] = mt.[TVSeriesId]
             ),
-            Actors AS (
-                SELECT [ActorId],
+            Directors AS (
+                SELECT [DirectorId],
                     [TitleKey]
-                FROM [gold].[dimActor]
+                FROM [gold].[dimDirector]
             ),
             Bridge AS (
-                SELECT a.[ActorId],
+                SELECT a.[DirectorId],
                     r.[RatingId]
-                FROM Actors a
+                FROM Directors a
                 INNER JOIN Ratings r
                 ON a.[TitleKey] = r.[TitleKey]
             )
-            INSERT INTO [gold].[bridgeActor] (
+            INSERT INTO [gold].[bridgeDirector] (
                 [DateLastUpdated],
-	            [ActorId],
+	            [DirectorId],
 	            [RatingId]
             )
             SELECT @ETLTimestamp AS [DateLastUpdated],
-                [ActorId],
+                [DirectorId],
                 [RatingId]
             FROM Bridge;
 
