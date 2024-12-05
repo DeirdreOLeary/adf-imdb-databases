@@ -61,13 +61,13 @@ AS
             )
             UPDATE [gold].[dimWriter]
                 SET [DateLastUpdated] = @ETLTimestamp,
-                [Name] = ca.[Name],
-                [BirthYear] = ca.[BirthYear],
-                [DeathYear] = ca.[DeathYear]
-            FROM [gold].[dimWriter] gda
-            INNER JOIN ChangedWriters ca
-            ON gda.[NameKey] = ca.[NameKey]
-                AND gda.[TitleKey] = ca.[TitleKey];
+                [Name] = cw.[Name],
+                [BirthYear] = cw.[BirthYear],
+                [DeathYear] = cw.[DeathYear]
+            FROM [gold].[dimWriter] gdw
+            INNER JOIN ChangedWriters cw
+            ON gdw.[NameKey] = cw.[NameKey]
+                AND gdw.[TitleKey] = cw.[TitleKey];
 
             /* Update 2 of 2: Insert new records based on the natural keys
                (i.e. those key combinations that do not already exist in the gold dimWriter table) */
@@ -78,12 +78,12 @@ AS
                     [Name],
                     [BirthYear],
                     [DeathYear]
-                FROM [silver].[Writers] sa
+                FROM [silver].[Writers] sw
                 WHERE NOT EXISTS (
                     SELECT *
-                    FROM [gold].[dimWriter] gda
-                    WHERE gda.[NameKey] = sa.[NameKey]
-                        AND gda.[TitleKey] = sa.[TitleKey]
+                    FROM [gold].[dimWriter] gdw
+                    WHERE gdw.[NameKey] = sw.[NameKey]
+                        AND gdw.[TitleKey] = sw.[TitleKey]
                 )
             )
             INSERT INTO [gold].[dimWriter] (

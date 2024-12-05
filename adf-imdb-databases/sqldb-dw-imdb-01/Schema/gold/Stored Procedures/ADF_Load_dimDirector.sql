@@ -61,13 +61,13 @@ AS
             )
             UPDATE [gold].[dimDirector]
                 SET [DateLastUpdated] = @ETLTimestamp,
-                [Name] = ca.[Name],
-                [BirthYear] = ca.[BirthYear],
-                [DeathYear] = ca.[DeathYear]
-            FROM [gold].[dimDirector] gda
-            INNER JOIN ChangedDirectors ca
-            ON gda.[NameKey] = ca.[NameKey]
-                AND gda.[TitleKey] = ca.[TitleKey];
+                [Name] = cd.[Name],
+                [BirthYear] = cd.[BirthYear],
+                [DeathYear] = cd.[DeathYear]
+            FROM [gold].[dimDirector] gdd
+            INNER JOIN ChangedDirectors cd
+            ON gdd.[NameKey] = cd.[NameKey]
+                AND gdd.[TitleKey] = cd.[TitleKey];
 
             /* Update 2 of 2: Insert new records based on the natural keys
                (i.e. those key combinations that do not already exist in the gold dimDirector table) */
@@ -78,12 +78,12 @@ AS
                     [Name],
                     [BirthYear],
                     [DeathYear]
-                FROM [silver].[Directors] sa
+                FROM [silver].[Directors] sd
                 WHERE NOT EXISTS (
                     SELECT *
-                    FROM [gold].[dimDirector] gda
-                    WHERE gda.[NameKey] = sa.[NameKey]
-                        AND gda.[TitleKey] = sa.[TitleKey]
+                    FROM [gold].[dimDirector] gdd
+                    WHERE gdd.[NameKey] = sd.[NameKey]
+                        AND gdd.[TitleKey] = sd.[TitleKey]
                 )
             )
             INSERT INTO [gold].[dimDirector] (
