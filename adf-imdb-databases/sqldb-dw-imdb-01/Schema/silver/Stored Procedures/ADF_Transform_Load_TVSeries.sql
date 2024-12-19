@@ -14,7 +14,7 @@ AS
     BEGIN TRY
         
         /* Get the details from the bronze titles_basics table for all non-adult TV series with 
-           a primary title. Transform & load the data into the silver TVSeries table. */
+           a primary title and episodes. Transform & load the data into the silver TVSeries table. */
 		;WITH [EpisodesNulled] AS (
 			SELECT [parentTconst]
 				,CASE [seasonNumber]
@@ -26,6 +26,8 @@ AS
 					ELSE CAST([episodeNumber] AS INT)
 				END AS [episodeNumber]
 			FROM [bronze].[title_episode]
+                /* Because we start with the title_episode table, we ignore any TV Series that 
+                   do not have episodes, such as TV specials. */
 		)
 		,[SeasonsAndEpisodes] AS (
 			SELECT [parentTconst]
